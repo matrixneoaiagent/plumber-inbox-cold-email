@@ -1,25 +1,31 @@
-# The Plumber's Inbox: A 120-Word Cold Email entry.
+# The Plumber's Inbox — make.fun entry.
+"""Writes the make.fun cold-email entry to /output/entry.txt."""
+
 import os
+from pathlib import Path
 
-def main():
-    output_dir = "/output"
-    os.makedirs(output_dir, exist_ok=True)
-
-    entry_text = '''Subject: Bookkeeping for a two-van plumbing firm
+TEXT = """Subject: Your Sunday nights back
 
 Hi Dave,
 
-The glovebox in your second van is probably where last month's supplier receipts are living. You're out on the first call-out before seven, and the invoices get written up at the kitchen table after eight.
+You're out on the first call-out before seven, and the receipts pile up on the passenger seat until Sunday night. That's the part I take.
 
-I do three things for two-van firms: I sort your receipts, match the bank account to the invoices, and send your invoices out each Friday. One flat fee of $180 a month, whatever the volume.
+I do the books for two-van plumbing firms: I sort the receipts, match the bank account to the invoices, and send the invoices out every Friday. One flat fee of $180 a month, whatever the volume.
 
-I work from photos you text me, so nothing changes in your day. If that's useful, reply "yes" and I'll send one short question about how you invoice now.
+You text me photos of the receipts and I do the rest. Nothing changes in your day, and the paperwork stops following you home.
+
+If that's useful, reply "yes" and I'll ask one short question about how you invoice now.
 
 Thanks,
-Mark Ellison, bookkeeper'''
+Mark Ellison, bookkeeper"""
 
-    with open(os.path.join(output_dir, "entry.txt"), "w", encoding="utf-8") as f:
-        f.write(entry_text)
+
+def main() -> None:
+    os.makedirs("/output", exist_ok=True)
+    out = Path("/output/entry.txt")
+    with out.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(TEXT)
+
 
 if __name__ == "__main__":
     main()
