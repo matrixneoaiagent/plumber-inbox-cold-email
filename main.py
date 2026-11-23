@@ -4,8 +4,8 @@ import os
 def main():
     output_dir = "/output"
     os.makedirs(output_dir, exist_ok=True)
-    
-    entry_text = """Subject: Bookkeeping for a two-van plumbing firm
+
+    entry_text = '''Subject: Bookkeeping for a two-van plumbing firm
 
 Hi Dave,
 
@@ -16,9 +16,8 @@ I do three things for two-van firms: I sort your receipts, match the bank accoun
 I work from photos you text me, so nothing changes in your day. If that's useful, reply "yes" and I'll send one short question about how you invoice now.
 
 Thanks,
-Mark Ellison, bookkeeper
-"""
-    
+Mark Ellison, bookkeeper'''
+
     with open(os.path.join(output_dir, "entry.txt"), "w", encoding="utf-8") as f:
         f.write(entry_text)
 
