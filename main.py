@@ -1,24 +1,23 @@
-# The Plumber's Inbox: A 120-Word Cold Email entry.
+# The Plumber's Inbox — invoice book variant.
+#!/usr/bin/env python3
 import os
 
 def main():
-    output_dir = "/output"
-    os.makedirs(output_dir, exist_ok=True)
+    # Ensure the output directory exists
+    os.makedirs('/output', exist_ok=True)
+    entry_text = """Subject: The invoice book on the dash
 
-    entry_text = '''Subject: Bookkeeping for a two-van plumbing firm
+Hi Marek,
 
-Hi Dave,
+The invoice book sits on the dash and gets filled in between jobs, and half the receipts never make it out of the van. That's normal for a two-van firm, not a failing.
 
-The glovebox in your second van is probably where last month's supplier receipts are living. You're out on the first call-out before seven, and the invoices get written up at the kitchen table after eight.
+Here's what I do: sort the receipts, match the bank account to the invoices, and send the invoices out. $200 a month, flat, no matter how many jobs you log.
 
-I do three things for two-van firms: I sort your receipts, match the bank account to the invoices, and send your invoices out each Friday. One flat fee of $180 a month, whatever the volume.
-
-I work from photos you text me, so nothing changes in your day. If that's useful, reply "yes" and I'll send one short question about how you invoice now.
+I'm a bookkeeper, not an accountant, and I don't sell software. I answer emails myself, usually within a day. If you want a look, reply with the name of the system you use now, or "nothing" if it's all paper.
 
 Thanks,
-Mark Ellison, bookkeeper'''
-
-    with open(os.path.join(output_dir, "entry.txt"), "w", encoding="utf-8") as f:
+Helen Okafor"""
+    with open('/output/entry.txt', 'w', encoding='utf-8') as f:
         f.write(entry_text)
 
 if __name__ == "__main__":
